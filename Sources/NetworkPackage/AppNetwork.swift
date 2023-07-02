@@ -14,7 +14,7 @@ import Foundation
 //  Created by Dmitry Mityunin on 7/2/23.
 //
 
-public class AppNetwork<T : Decodable>: AppNetworking {
+open class AppNetwork<T : Decodable>: AppNetworking {
     let baseStringURL: String
     func makeRequest() async -> T? {
         do {
