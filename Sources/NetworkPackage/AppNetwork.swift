@@ -15,8 +15,8 @@ import Foundation
 //
 
 open class AppNetwork<T : Decodable>: AppNetworking {
-    let baseStringURL: String
-    func makeRequest() async -> T? {
+    public let baseStringURL: String
+    open func makeRequest() async -> T? {
         do {
             let (data, response) = try await URLSession.shared.data(from: URL(string: baseStringURL)!)
             
@@ -35,7 +35,7 @@ open class AppNetwork<T : Decodable>: AppNetworking {
         
         return nil
     }
-    init(url: String) {
+    public init(url: String) {
         self.baseStringURL = url
     }
 }
